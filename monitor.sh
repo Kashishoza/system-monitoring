@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sytem_uptime=$(uptime)
+system_uptime=$(uptime)
 cpu_usage=$(top -bn1| grep "Cpu")
 memory_usage=$(free -h)
 disk_usage=$(df -h)
@@ -10,9 +10,9 @@ LOG_FILE="logs/monitor.log"
 
 if [[ ! -d $LOG_FILE ]]; then
     mkdir logs
-    touch logs/monitor.log
 fi
 
+# create a log file
 echo "System Monitoring Log - $(date)" > $LOG_FILE
 echo "===========System Uptime=============" >> $LOG_FILE
 echo "$sytem_uptime" >> $LOG_FILE
